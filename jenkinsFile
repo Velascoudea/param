@@ -19,7 +19,7 @@ pipeline {
                     bat "javac Operaciones.java" 
                 }
                 script {
-                    bat "java Operaciones" 
+                    bat "java Operaciones 5 8" 
                 }
             }
         }
