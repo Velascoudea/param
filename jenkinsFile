@@ -1,0 +1,27 @@
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Operaciones'
+            }
+        }
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Velascoudea/param.git'
+            }
+        }
+         stage('Compile Java') {
+            steps {
+                script {
+                    bat "javac Operaciones.java" 
+                }
+                script {
+                    bat "java Operaciones" 
+                }
+            }
+        }
+    }
+}
